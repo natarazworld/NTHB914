@@ -5,16 +5,16 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 	 //bean properties
-	private int pid;
+	private Integer pid;
 	private String pname;
-	private float price;
-	private float qty;
+	private Float price;
+	private Float qty;
 	//setters and getters
 	 //alt+shift+s ,r
-	public int getPid() {
+	public Integer getPid() {
 		return pid;
 	}
-	public void setPid(int pid) {
+	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
 	public String getPname() {
@@ -23,16 +23,16 @@ public class Product implements Serializable {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	public float getPrice() {
+	public Float getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
-	public float getQty() {
+	public Float getQty() {
 		return qty;
 	}
-	public void setQty(float qty) {
+	public void setQty(Float qty) {
 		this.qty = qty;
 	}
 	
