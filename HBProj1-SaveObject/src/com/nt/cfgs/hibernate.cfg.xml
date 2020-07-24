@@ -13,6 +13,7 @@
           <!-- hibernate properties -->
            <property name="show_sql">true</property>
            <property name="format_sql">true</property>
+           <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
            
           <!-- Mapping file names -->
            <mapping  resource="com/nt/entity/Product.hbm.xml"/>
