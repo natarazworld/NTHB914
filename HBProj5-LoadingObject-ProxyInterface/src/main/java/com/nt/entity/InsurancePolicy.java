@@ -2,7 +2,7 @@ package com.nt.entity;
 
 import java.io.Serializable;
 
-public class InsurancePolicy implements Serializable {
+public class InsurancePolicy implements Serializable,IInsurancePolicy{
 	private Long policyId;
 	private String policyName;
 	private String policyType;
@@ -14,31 +14,31 @@ public class InsurancePolicy implements Serializable {
 	}
 	
 	//gettes && setters  (alt+shift+s,r
-	public final Long  getPolicyId() {
+	public   Long  getPolicyId() {
 		return policyId;
 	}
 	public void setPolicyId(Long policyId) {
 		this.policyId = policyId;
 	}
-	public final String getPolicyName() {
+	public   String getPolicyName() {
 		return policyName;
 	}
 	public void setPolicyName(String policyName) {
 		this.policyName = policyName;
 	}
-	public final String getPolicyType() {
+	public  String getPolicyType() {
 		return policyType;
 	}
 	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
 	}
-	public final  String getCompany() {
+	public   String getCompany() {
 		return company;
 	}
 	public void setCompany(String company) {
 		this.company = company;
 	}
-	public final Integer getTenure() {
+	public  Integer getTenure() {
 		return tenure;
 	}
 	public void setTenure(Integer tenure) {

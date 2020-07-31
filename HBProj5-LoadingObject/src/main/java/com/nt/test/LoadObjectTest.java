@@ -15,7 +15,7 @@ public class LoadObjectTest {
 		ses=HibernateUtil.getSession();
 		try {
 			//Load object
-			policy=ses.get(InsurancePolicy.class,1001L);
+			policy=ses.get(InsurancePolicy.class,9001L);
 			//verify
 			if(policy==null)
 				System.out.println("Record not found");

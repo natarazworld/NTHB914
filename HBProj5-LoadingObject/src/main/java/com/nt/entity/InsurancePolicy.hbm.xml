@@ -4,7 +4,7 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
  <hibernate-mapping>
-     <class name="com.nt.entity.InsurancePolicy"  table="INSURANCEPOLICY">
+     <class name="com.nt.entity.InsurancePolicy"  table="INSURANCEPOLICY" lazy="true">
          <id name="policyId">
             <column name="POLICYID"/>
          </id>
