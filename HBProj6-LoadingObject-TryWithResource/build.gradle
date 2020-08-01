@@ -1,0 +1,19 @@
+
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.18.Final'
+    // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+   
+}
+
+mainClassName="com.nt.test.LoadObjectTest"
