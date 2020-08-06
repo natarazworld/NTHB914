@@ -1,0 +1,27 @@
+
+
+plugins {
+    id 'application'
+}
+
+//https://stackoverflow.com/questions/54147275/move-to-openjdk-11-but-compile-in-java-8
+sourceCompatibility = "13"
+targetCompatibility = "13"
+//compileJava.options.fork = true
+
+
+repositories {
+    jcenter()
+}
+
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.18.Final'
+    // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+   
+}
+
+mainClassName="com.nt.test.LoadObjectTest"

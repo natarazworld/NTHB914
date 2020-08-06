@@ -1,21 +1,16 @@
 package com.nt.test;
 
-
-
-
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import com.nt.entity.BankAccount;
+import com.nt.entity.Project;
 import com.nt.utility.HibernateUtil;
 
-public class UpdateObjectTest1 {
+public class DeletingObjectTest1 {
 	
 	public static void main(String[] args) {
 		Session ses=null;
-		BankAccount account=null;
+		Project proj=null;
 		Transaction tx=null;
 		boolean flag=false;
 		//get Session
@@ -23,20 +18,11 @@ public class UpdateObjectTest1 {
 		try {
 			//begin Tx
 			tx=ses.beginTransaction();
-		//Load object for partial moidification of the object
-	    account=ses.get(BankAccount.class,1001L);
-	     if(account!=null) {
-			
-			  //modify object
-			 account.setBalance(410000);
-			  ses.update(account);
+		     proj=new Project();
+		     proj.setProjId(81);
+		     ses.delete(proj);
              flag=true;	
-	     }
-	     else {
-	    	 System.out.println("record /object not found");
-	    	 return ;
-	     }
-		}//try
+	    }//try
 		catch(HibernateException  he) {
 			flag=false;
 			he.printStackTrace();
@@ -44,11 +30,11 @@ public class UpdateObjectTest1 {
 		finally {
 			 if(flag) {
 				 tx.commit();
-				 System.out.println("Object updated");
+				 System.out.println("Object deleted");
 			 }
 			 else {
 				 tx.rollback();
-				 System.out.println("object not updated");
+				 System.out.println("object not deleted");
 			 }
 				 
 			//close objs

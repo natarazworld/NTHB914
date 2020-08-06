@@ -5,7 +5,7 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
 	<hibernate-mapping>
-	    <class  name="com.nt.entity.BankAccount"  >
+	    <class  name="com.nt.entity.BankAccount"  dynamic-update="true"    >
 	         <id name="acno"/>
 	         <property name="holderName"/>
 	         <property name="balance"/>

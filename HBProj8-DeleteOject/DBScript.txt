@@ -1,0 +1,6 @@
+SQL> desc Project;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PROJID                                    NOT NULL NUMBER(10)
+ PROJNAME                                           VARCHAR2(15 CHAR)
+ TEAMSIZE                                           NUMBER(10)

@@ -11,46 +11,39 @@ import org.hibernate.Transaction;
 import com.nt.entity.BankAccount;
 import com.nt.utility.HibernateUtil;
 
-public class UpdateObjectTest1 {
+public class RefreshingObject {
 	
 	public static void main(String[] args) {
 		Session ses=null;
 		BankAccount account=null;
-		Transaction tx=null;
-		boolean flag=false;
+		
 		//get Session
 		ses=HibernateUtil.getSession();
 		try {
-			//begin Tx
-			tx=ses.beginTransaction();
 		//Load object for partial moidification of the object
 	    account=ses.get(BankAccount.class,1001L);
 	     if(account!=null) {
+			System.out.println(account);
 			
-			  //modify object
-			 account.setBalance(410000);
-			  ses.update(account);
-             flag=true;	
+			System.out.println("modify 1001 record in DB table  from SQL prompt/developer");
+			try {
+			 Thread.sleep(40000);   //modify db table record using SQL prompt or SQL developer
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			ses.refresh(account);  //Db table row  to Entity object sync
+			System.out.println(account);
 	     }
 	     else {
 	    	 System.out.println("record /object not found");
-	    	 return ;
 	     }
 		}//try
 		catch(HibernateException  he) {
-			flag=false;
 			he.printStackTrace();
 		}
 		finally {
-			 if(flag) {
-				 tx.commit();
-				 System.out.println("Object updated");
-			 }
-			 else {
-				 tx.rollback();
-				 System.out.println("object not updated");
-			 }
-				 
 			//close objs
 			 HibernateUtil.closeSession(ses);
 			HibernateUtil.closeSessionFactory();

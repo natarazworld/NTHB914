@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+  <hibernate-mapping>
+     <class  name="com.nt.entity.Project"  table="PROJECT">
+          <id name="projId"  column="PROJID"  type="long" length="11" />
+          <property name="projName" column="PROJNAME"  type="string"  length="15"/>
+           <property name="teamsize" column="TEAMSIZE" type="int"  />
+     </class>
+  
+  </hibernate-mapping>	
+	
