@@ -22,7 +22,7 @@ public class UpdateObjectTest {
 		ses=HibernateUtil.getSession();
 		//prepare full object for modifcation with exiting id
 		account=new BankAccount();
-		account.setAcno(1001L);
+		account.setAcno(1021L);
 		account.setHolderName("rakesh"); account.setBalance(400000);
 		try {
 			//begin Tx
