@@ -3,6 +3,7 @@ package com.nt.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,13 +11,16 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Proxy;
 import org.hibernate.annotations.Type;
+
 
 @Entity
 @DynamicInsert(true) //or  @DynamicInsert(value=true)  
 //@DynamicUpdate(true)
 //@Table(name="PROJECT")
-public class Project implements Serializable {
+@Proxy(lazy = true,proxyClass =IProject.class )
+public final class Project implements Serializable,IProject {
 		private Long projId;
 		private String projName;
 		private  Integer teamSize;
@@ -25,6 +29,7 @@ public class Project implements Serializable {
 		@Id
 		@Column(name="PROJID",length =10 )
 		@Type(type="long")
+		
 		public Long getProjId() {
 			return projId;
 		}
@@ -52,7 +57,7 @@ public class Project implements Serializable {
 		
 		@Column(name="COMPANY",length = 20)
 		@Type(type="string")
-		@Transient
+		//@Transient
 		public String getCompany() {
 			return company;
 		}
