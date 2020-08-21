@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 import com.nt.entity.Product;
 import com.nt.utility.HibernateUtil;
 
-public class GeneratorsTest {
+public class GeneratorsTestBatch {
 
 	public static void main(String[] args) {
 		Session ses=null;
@@ -31,9 +31,16 @@ public class GeneratorsTest {
 		  try {
 			  tx=ses.beginTransaction();    //internally calls  con.setAutoCommit(false) to begin the Tx
 			      //save object
+			   for(int i=1;i<=20;++i) {
+				   prod=new Product();
+					//prod.setPid(9010);
+					 prod.setPname("chair1");
+					 prod.setPrice(40000.0f);
+					 prod.setQty(80.0f);
 			     idVal=(int)ses.save(prod);
 			     System.out.println("Generated id values ::"+idVal);
 			     flag=true;
+			   }
 		  }
 		  catch(HibernateException he) {
 			  he.printStackTrace();
