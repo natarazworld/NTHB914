@@ -21,14 +21,14 @@
 	                   </generator> 
 	         </id>   -->
 	         
-	            <id name="pid"  column="PID"  type="int">
+	    <!--         <id name="pid"  column="PID"  type="int">
 	                   <generator class="hilo">
 	                       <param name="table">HI_TAB</param>   
 	                 <param name="column">HI_COL</param>
 	                       <param name="max_lo">5</param>
 	                   </generator> 
 	         </id>
-	         
+	          -->
 	         
 	         <!-- <id name="pid"  column="PID"  type="int">
 	                   <generator class="hilo">
@@ -40,6 +40,35 @@
 	                   <generator class="hilo"/>
 	         </id>  -->
 	         
+	      <!--    <id name="pid"  column="PID"  type="int">
+	                   <generator class="seqhilo">
+	                      <param name="sequence">pid_seq</param>   
+	                      <param name="max_lo">10</param>
+	                   </generator>
+	         </id>  -->
+	         
+	         <!-- <id name="pid"  column="PID"  type="int">
+	                   <generator class="native"/>
+	         </id>
+	          -->
+	          
+	       <!--    <id name="pid"  column="PID"  type="int">
+	                   <generator class="native">
+	                       <param name="sequence_name">pid_seq</param>
+	                   </generator>
+	         </id> -->
+	         
+	       <!--    <id name="pid"  column="PID"  type="int">
+	                   <generator class="native"/>
+	         </id> - -->
+	       <!--   <id name="pid"  column="PID">
+	              <generator class="select">
+	                   <param name="key">pname</param>
+	              </generator>
+	         </id>
+	          -->
+	          
+	          
 	         
 	         <property name="pname"  column="PNAME"  length="20"/>
 	         <property name="price"  column="PRICE"  type="float" />

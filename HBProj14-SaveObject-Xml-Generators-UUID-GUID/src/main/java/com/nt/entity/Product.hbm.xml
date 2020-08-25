@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	   <class  name="com.nt.entity.Product"  table="PRODUCT_XUID"  dynamic-insert="false">
+	              <!-- <id name="pid"  column="PID"  type="string"  length="35">
+	                  <generator class="uuid"/>
+	              </id>
+	               -->
+	                <id name="pid"  column="PID"  type="string"  length="40">
+	                  <generator class="guid"/>
+	              </id>
+	              
+	         <property name="pname"  column="PNAME"  length="20"/>
+	         <property name="price"  column="PRICE"  type="float" />
+	         <property name="qty" column="QTY"  type="float"/>
+	   </class>
+	</hibernate-mapping>
+	
+	
