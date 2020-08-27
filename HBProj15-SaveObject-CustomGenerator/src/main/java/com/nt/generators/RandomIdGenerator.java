@@ -14,7 +14,7 @@ public class RandomIdGenerator implements IdentifierGenerator {
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
       System.out.println("RandomIdGenerator.generate(-,-)");
-		int idVal=0;
+       int idVal=0;
 		idVal=new Random().nextInt(100000);
 		return idVal;
 	}
