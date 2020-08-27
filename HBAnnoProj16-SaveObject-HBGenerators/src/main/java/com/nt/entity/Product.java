@@ -8,11 +8,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 @Entity
 public class Product implements Serializable {
 	 //bean properties
+	
+	/*@Id
+		@GenericGenerator(name="gen1",strategy ="increment")
+		@GeneratedValue(generator = "gen1")
+	*/
+	
+	/*@Id
+	@GenericGenerator(name="gen1",strategy ="identity")
+	@GeneratedValue(generator = "gen1")*/
+	
+	
+	/*@Id   --->create sequence with the name "gen1" starting with 1 , increment by 1
+	@GenericGenerator(name="gen1",strategy ="sequence")
+	@GeneratedValue(generator = "gen1")*/
+	
+	
+	/*@Id
+	@GenericGenerator(name="gen1",strategy ="sequence",
+	                                           parameters =@Parameter(name="sequence_name",value="PID_SEQ") )
+	@GeneratedValue(generator = "gen1")*/
+
 	@Id
-	@GenericGenerator(name="gen1",strategy ="increment")
+	@GenericGenerator(name="gen1",strategy ="seqhilo",
+	                                           parameters = {@Parameter(name="sequence_name",value="PID_SEQ"),
+	                                                                        @Parameter(name="max_lo", value="5")
+	                                                                       }
+	                                        )
 	@GeneratedValue(generator = "gen1")
 	private Integer pid;
 	private String pname;

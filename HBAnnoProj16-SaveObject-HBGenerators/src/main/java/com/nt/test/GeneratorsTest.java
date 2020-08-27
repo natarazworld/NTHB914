@@ -24,7 +24,7 @@ public class GeneratorsTest {
 		  //create Entity  object to save with Db s/w
 		prod=new Product();
 		//prod.setPid(9010);
-		 prod.setPname("chair7");
+		 prod.setPname("chair8");
 		 prod.setPrice(40000.0f);
 		 prod.setQty(80.0f);
 		
