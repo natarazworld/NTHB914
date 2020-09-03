@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	 <!-- CREATE SEQUENCE  "SYSTEM"."ACNO_SEQ"  MINVALUE 10000 MAXVALUE 300000000000 INCREMENT BY 1 START WITH 10000
+	 -->
+	<hibernate-mapping>
+	   <class  name="com.nt.entity.BankAccount" >
+	      <id name="acno" type="long">
+	          <generator class="sequence">
+	              <param name="sequence_name">ACNO_SEQ</param>
+	          </generator>
+	      </id>
+	       <timestamp name="lastUpdated"  />
+	      <property name="holderName"   length="20" type="string"/>
+	      <property name="type"   type="string" length="10"/>
+	      <property name="balance" type="double"/>
+	      <property name="openingDate"   />
+	   </class>
+	</hibernate-mapping>
+	
+	
