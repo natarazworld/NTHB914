@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 import com.nt.entity.InsurancePolicy;
 import com.nt.utility.HibernateUtil;
 
-public class LoadObjectTest {
+public class FirstLevelCacheTest1 {
 
 	public static void main(String[] args) {
 		Session ses=null;

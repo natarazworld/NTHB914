@@ -6,20 +6,20 @@ import org.hibernate.Session;
 import com.nt.entity.InsurancePolicy;
 import com.nt.utility.HibernateUtil;
 
-public class LoadObjectTest1 {
+public class FirstLevelCacheTest3 {
 
 	public static void main(String[] args) {
 		Session ses=null;
-		InsurancePolicy policy=null;
+		InsurancePolicy policy=null,policy1=null;
 		//get SEssion object
 		ses=HibernateUtil.getSession();
 		try {
 			//Load object
 			policy=ses.load(InsurancePolicy.class,3001L);
-			if(policy==null)
-				System.out.println("record not found");
-			else
-			   System.out.println(policy);
+			System.out.println(policy);
+			policy1=ses.load(InsurancePolicy.class,3001L);
+			System.out.println(policy1);
+			
 		}//try
 		catch(HibernateException he) {
 			System.out.println("record not found---");

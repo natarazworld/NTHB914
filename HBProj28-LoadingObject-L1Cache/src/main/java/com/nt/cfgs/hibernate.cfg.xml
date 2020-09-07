@@ -11,10 +11,12 @@
                  <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
                  <property name="connection.username">system</property>
                  <property name="connection.password">manager</property>
+                   <property name="connection.pool_size">25</property>
                  <!-- hibernate properties -->
                  <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
                  <property name="show_sql">true</property>
                  <property name="format_sql">true</property>
+               
                  <!-- mapping file -->
                  <mapping resource="com/nt/entity/InsurancePolicy.hbm.xml"/>
            </session-factory>
