@@ -23,10 +23,19 @@
                  <!-- <property name="hibernate.hikari.idleTimeout">30000</property> -->  
                  
                   <!-- Vibur properties -->
-                 <property name="hibernate.vibur.poolInitialSize">10</property>
+               <!--   <property name="hibernate.vibur.poolInitialSize">10</property>
                  <property name="hibernate.vibur.poolMaxSize">100</property>
-                 <property name="hibernate.vibur.connectionIdleLimitInSeconds">30</property>
-                     
+                 <property name="hibernate.vibur.connectionIdleLimitInSeconds">30</property> -->
+                 
+                 <!-- c3Po properties -->
+             <!--     <property name="hibernate.c3p0.min_size">10</property>
+				<property name="hibernate.c3p0.max_size">30</property>
+					<property name="hibernate.c3p0.timeout">30</property>
+					<property name="hibernate.c3p0.max_statements">20</property> -->
+                 
+                    <!--  agroal properties -->
+                      <property name="hibernate.agroal.minSize">10</property>
+				<property name="hibernate.agroal.maxSize">30</property>
                  
                  
                  
@@ -36,7 +45,11 @@
                  <property name="format_sql">true</property>
        <!--          <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
         -->
-               <property name="hibernate.connection.provider_class">org.hibernate.vibur.internal.ViburDBCPConnectionProvider</property>
+       <!--         <property name="hibernate.connection.provider_class">org.hibernate.vibur.internal.ViburDBCPConnectionProvider</property> -->
+              <!--     <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+                  
+                      <property name="hibernate.connection.provider_class">org.hibernate.agroal.internal.AgroalConnectionProvider</property> 
+       
                   <!-- mapping file -->
                  <mapping resource="com/nt/entity/InsurancePolicy.hbm.xml"/>
            </session-factory>

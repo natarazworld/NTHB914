@@ -17,7 +17,13 @@ implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
 //implementation  group: 'org.hibernate', name: 'hibernate-hikaricp', version: '5.4.18.Final'
 
 // https://mvnrepository.com/artifact/org.hibernate/hibernate-vibur
-implementation group: 'org.hibernate', name: 'hibernate-vibur', version: '5.4.18.Final'
+ //implementation group: 'org.hibernate', name: 'hibernate-vibur', version: '5.4.18.Final'
+ 
+ // https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0
+//implementation  group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.4.18.Final'
+ 
+   // https://mvnrepository.com/artifact/org.hibernate/hibernate-agroal
+implementation group: 'org.hibernate', name: 'hibernate-agroal', version: '5.4.18.Final'
    
 }
 
