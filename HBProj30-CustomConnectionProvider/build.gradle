@@ -1,0 +1,33 @@
+
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.18.Final'
+    // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+   // https://mvnrepository.com/artifact/org.hibernate/hibernate-hikaricp
+//implementation  group: 'org.hibernate', name: 'hibernate-hikaricp', version: '5.4.18.Final'
+
+// https://mvnrepository.com/artifact/org.hibernate/hibernate-vibur
+ //implementation group: 'org.hibernate', name: 'hibernate-vibur', version: '5.4.18.Final'
+ 
+ // https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0
+//implementation  group: 'org.hibernate', name: 'hibernate-c3p0', version: '5.4.18.Final'
+ 
+   // https://mvnrepository.com/artifact/org.hibernate/hibernate-agroal
+//implementation group: 'org.hibernate', name: 'hibernate-agroal', version: '5.4.18.Final'
+   
+   // https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+ implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.7.0'
+   
+}
+
+mainClassName="com.nt.test.LoadObjectTest"
