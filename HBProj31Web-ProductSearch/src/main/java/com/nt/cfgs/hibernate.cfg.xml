@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+       <hibernate-configuration>
+           <session-factory>
+               
+                 <!-- hibernate properties -->
+                 <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+                 <property name="show_sql">true</property>
+                 <property name="format_sql">true</property>
+                 
+                 <!-- Working server Managed jdbc con pool -->               
+                 <property name="hibernate.connection.provider_class">org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl</property>
+               <!--   <property name="hibernate.connection.datasource">DsJndi</property>  -->
+                     <property name="hibernate.connection.datasource">java:/comp/env/DsJndi</property>    <!-- only for Tomcat place extra prefix(java:/comp/env/) -->
+                  <!-- mapping file -->
+                 <mapping class="com.nt.entity.Product"/>
+           </session-factory>
+       
+       </hibernate-configuration>
