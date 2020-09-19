@@ -1,0 +1,28 @@
+
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility='13'
+targetCompatibility='13'
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.18.Final'
+    // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+   // https://mvnrepository.com/artifact/org.hibernate/hibernate-hikaricp
+implementation  group: 'org.hibernate', name: 'hibernate-hikaricp', version: '5.4.18.Final'
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+
+   
+}
+
+mainClassName="com.nt.test.LoadObjectTest"
