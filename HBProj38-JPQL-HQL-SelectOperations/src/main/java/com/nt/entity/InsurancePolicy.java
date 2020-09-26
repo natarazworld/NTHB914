@@ -2,6 +2,10 @@ package com.nt.entity;
 
 import java.io.Serializable;
 
+import org.hibernate.annotations.Proxy;
+
+import jdk.jfr.Label;
+
 public class InsurancePolicy implements Serializable {
 	private Long policyId;
 	private String policyName;
@@ -10,7 +14,7 @@ public class InsurancePolicy implements Serializable {
 	private Integer tenure;
 	
 	public InsurancePolicy() {
-		System.out.println("InsurancePolicy:: 0-param consructor"+this.getClass());
+		System.out.println("InsurancePolicy:: 0-param consructor"+this.getClass()+" ---> "+this.hashCode()+"--->"+System.identityHashCode(this));
 	}
 	
 	//gettes && setters  (alt+shift+s,r
