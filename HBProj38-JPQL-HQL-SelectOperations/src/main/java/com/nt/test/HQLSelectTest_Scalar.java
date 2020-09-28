@@ -60,7 +60,7 @@ public class HQLSelectTest_Scalar {
 		*/
 		
 		// =================== HQL SELECT SCALAR Query that gives  single specific col value using iterate()========
-					try {
+		/*			try {
 						Transaction tx=ses.beginTransaction(); //dummy
 						//prepare Query object
 						Query query=ses.createQuery("SELECT policyId FROM  com.nt.entity.InsurancePolicy WHERE tenure>=:max");
@@ -78,7 +78,8 @@ public class HQLSelectTest_Scalar {
 						}
 						finally {
 							HibernateUtil.closeSessionFactory();
-						}
+						}*/
+		
 		
 	}// main
 }// class
