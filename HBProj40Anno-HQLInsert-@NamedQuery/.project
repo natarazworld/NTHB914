@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HBProj38-JPQL-HQL</name>
-	<comment>Project HBProj5-LoadingObject created by Buildship.</comment>
+	<name>HBProj40Anno-HQLInsert-@NamedQuery</name>
+	<comment>Project HBProj39-HQLInsert created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -15,15 +15,9 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.wst.common.project.facet.core.builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
-		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
 </projectDescription>
