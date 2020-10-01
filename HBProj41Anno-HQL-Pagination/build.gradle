@@ -1,0 +1,37 @@
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'war'
+}
+
+eclipse{
+    wtp{
+         component{
+                		resource sourcePath: "/WebContent", deployPath: "/"
+            }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+
+
+dependencies {
+      // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+   implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+   // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+implementation  group: 'org.hibernate', name: 'hibernate-core', version: '5.4.21.Final'
+    // https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8
+implementation  group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+
+// https://mvnrepository.com/artifact/javax.servlet/jstl
+implementation  group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+// https://mvnrepository.com/artifact/taglibs/standard
+implementation  group: 'taglibs', name: 'standard', version: '1.1.2'
+
+
+      
+}
