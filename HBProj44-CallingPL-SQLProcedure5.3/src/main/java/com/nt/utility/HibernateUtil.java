@@ -7,7 +7,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.nt.entity.InsurancePolicy;
 
 public class HibernateUtil {
 	private static SessionFactory factory;
@@ -20,7 +19,6 @@ public class HibernateUtil {
 			//boot strap hibernate
 			 cfg=new Configuration();
 			 cfg.configure("com/nt/cfg/hibernate.cfg.xml");
-			 cfg.addAnnotatedClass(InsurancePolicy.class);
 			 //build ServiceRegistry
 			 builder=new StandardServiceRegistryBuilder();
 			 //create ServiceRegistry

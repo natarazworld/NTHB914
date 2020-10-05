@@ -23,11 +23,20 @@
                 </tr>
             </c:forEach>
        </table>
+       
        <center>
+            <c:if test="${pageNo>1 }">
+                  <b><a href="controller?pageNo=${pageNo-1}&s1=link">previous</a> </b> &nbsp;&nbsp;
+            </c:if>
          <c:forEach var="i"  begin="1"  end="${pagesCount}"  step="1">
             <b><a href="controller?pageNo=${i}&s1=link">[ ${i} ] </a></b>  &nbsp; &nbsp; 
          </c:forEach>
+         
+          <c:if test="${pageNo<pagesCount }">
+                  <b><a href="controller?pageNo=${pageNo+1}&s1=link">next</a> </b> &nbsp;&nbsp;
+            </c:if>
          </center>
+         
    </c:when>
      <c:otherwise>
          <h1 style="color:red;text-align:center">No records found </h1>

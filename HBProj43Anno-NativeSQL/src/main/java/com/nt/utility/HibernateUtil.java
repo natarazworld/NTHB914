@@ -20,7 +20,7 @@ public class HibernateUtil {
 			//boot strap hibernate
 			 cfg=new Configuration();
 			 cfg.configure("com/nt/cfg/hibernate.cfg.xml");
-			 cfg.addAnnotatedClass(InsurancePolicy.class);
+			 cfg.addAnnotatedClass(InsurancePolicy.class); //for annoated classes
 			 //build ServiceRegistry
 			 builder=new StandardServiceRegistryBuilder();
 			 //create ServiceRegistry

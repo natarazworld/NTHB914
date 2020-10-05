@@ -18,9 +18,13 @@ public class InsurancePolicyDAOImpl implements IInsurancePolicyDAO {
 		Query query=null;
 		long count=0;
 		List<InsurancePolicy> list=null;
+		Transaction tx=null;
 		//get Session
 		ses=HibernateUtil.getSession();
+		System.out.println(ses.hashCode()+" getPageData(-,-) ");
 		try {
+			if(!ses.getTransaction().isActive())
+			     tx=ses.beginTransaction();
 			//get Acccess to named HQL query
 			query=ses.getNamedQuery("GET_ALL_POLICIES");
 			//perform pagination
@@ -49,7 +53,10 @@ public class InsurancePolicyDAOImpl implements IInsurancePolicyDAO {
 		List<Long> list=null;
 		//get Session
 		ses=HibernateUtil.getSession();
+		System.out.println(ses.hashCode()+"--->getTotalRecordsCount() ");
 		try {
+			if(!ses.getTransaction().isActive())
+			   tx=ses.beginTransaction();//dummy
 			//get Acccess to named HQL query
 			query=ses.getNamedQuery("GET_POLICIES_COUNT");
 			//exdcute query

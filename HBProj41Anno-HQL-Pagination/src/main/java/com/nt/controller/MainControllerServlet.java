@@ -67,6 +67,7 @@ public class MainControllerServlet extends HttpServlet {
 	   //keep listDTO (output) in request scope
 	    req.setAttribute("policiesList",listDTO);
 	    req.setAttribute("pagesCount",pagesCount);
+	    req.setAttribute("pageNo",pageNo);
 	    targetPage="/report.jsp";
 	   }
 	   catch(HibernateException he) {
