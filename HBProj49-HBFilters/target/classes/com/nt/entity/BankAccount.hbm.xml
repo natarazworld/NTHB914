@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.nt.entity.BankAccount"  table="BANK_ACCOUNT">
+         <id name="acno" type="int"/>
+         <property name="holderName" type="string"/>
+         <property name="balance" type="float"/>
+         <property name="status"  type="string"/>
+         <!-- applying filter conditon -->
+         <filter  name="FILTER_BANKACCOUNT_STATUS" condition="STATUS NOT IN(:accountType1,:accountType2)"/>
+   </class>
+   
+   <!-- defining the filter with name, parameters -->
+   <filter-def name="FILTER_BANKACCOUNT_STATUS" >
+      <filter-param name="accountType1" type="string"/>
+      <filter-param name="accountType2" type="string"/>
+   </filter-def>
+
+</hibernate-mapping>
