@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class name="StudentInfo"  table="STUDENT_INFO">
+         <id name="sno" type="int">
+            <generator class="increment"/>
+         </id>
+         <property name="sname" type="string"  length="10"/>
+         <property name="avg" type="float"/>
+         <component name="addrs"  class="Address">
+             <property name="doorNo" type="string"  length="10"/>
+              <property name="streetName" type="string"  length="10"/>
+              <property name="areaName" type="string"  length="10"/>
+              <property name="state" type="string"  length="10"/>
+              <property name="country" type="string"  length="10"/>
+              <property name="pinCode" type="long" />
+         </component>
+   </class>
+   
+ 
+
+</hibernate-mapping>
