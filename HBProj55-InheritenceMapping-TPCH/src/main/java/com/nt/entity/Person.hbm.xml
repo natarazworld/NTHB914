@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class name="Person"  table="INH_PERSON_TPCH" discriminator-value="per"  >
+        <id name="id" type="int">
+             <generator class="increment"/>
+        </id>
+        <discriminator column="PERSON_TYPE" length="10" type="string"/>
+        <property name="name"  type="string" length="15"/>
+        <property name="addrs" type="string" length="15"/>
+        
+        <subclass name="Student" discriminator-value="stud">
+            <property name="college" type="string" length="10"/>
+            <property name="branch"  type="string"  length="10"/>
+            <property name="avg"  type="float"  scale="2"  precision="5"/>
+        </subclass>
+        
+       <subclass name="Employee" discriminator-value="emp">
+            <property name="desg" type="string" length="10"/>
+            <property name="salary"  type="float"  scale="2"  precision="10"/>
+            <property name="deptNo"  type="int" />
+        </subclass>
+        
+   
+   </class>
+ 
+
+</hibernate-mapping>
