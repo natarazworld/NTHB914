@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping  package="com.nt.entity">
-   <class name="Person"  table="INH_PERSON_TPCC_POLY"  polymorphism="explicit" >
+   <class name="Person"  table="INH_PERSON_TPCC_POLY"  polymorphism="implicit" >
         <id name="id" type="int">
              <generator class="increment"/>
         </id>
