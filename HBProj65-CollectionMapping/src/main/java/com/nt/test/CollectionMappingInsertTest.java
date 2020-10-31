@@ -23,11 +23,11 @@ public class CollectionMappingInsertTest {
 				tx=ses.beginTransaction();
 			//prepare object
 			Employee emp=new Employee();
-			emp.setEname("mahesh"); emp.setEadd("newyork");
-			emp.setFriendsList(List.of("ram","sam", "som","allen"));
-			emp.setRelativesList(List.of("rani","chandini","raji"));
-			emp.setPhones(Set.of(4999999L,6888888L,67777777L));
-			emp.setBankAccounts(Map.of("PNB",5545535L,"CANARA",14465545L,"HDFC",3555534L));
+			emp.setEname("raja"); emp.setEadd("hyd");
+			emp.setFriendsList(List.of("ramesh","suresh", "naresh","suresh"));
+			emp.setRelativesList(List.of("karan","jani","arjun"));
+			emp.setPhones(Set.of(9999999L,8888888L,77777777L));
+			emp.setBankAccounts(Map.of("SBI",543535L,"Union",5435545L,"ICICI",5534534L));
 			//save object
 			ses.save(emp);
 			flag=true;

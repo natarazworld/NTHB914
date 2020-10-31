@@ -44,8 +44,14 @@ public class Employee implements Serializable {
 	                                     joinColumns = @JoinColumn(name="emp_id",referencedColumnName = "eno"))
 	 @OrderColumn(name = "FRIEND_NO")
 	 @ListIndexBase(value = 1)
-	 
 	  private  List<String> friendsList;
+	 
+	 @ElementCollection
+	 @Column(name="RELATIVE")
+	 @CollectionTable(name = "EMP_RELATIVES",
+	                                     joinColumns = @JoinColumn(name="emp_id",referencedColumnName = "eno"))
+	  private  List<String> relativesList;
+	 
 	 
 	 @ElementCollection
 	 @Column(name="MOBILENUMBER")
