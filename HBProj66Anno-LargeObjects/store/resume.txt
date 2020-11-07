@@ -1,0 +1,4 @@
+name:raja
+age=30
+addrs=hyd
+qualification: B.Tech
