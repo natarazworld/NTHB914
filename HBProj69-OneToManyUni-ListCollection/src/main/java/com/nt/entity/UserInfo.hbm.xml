@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class name="UserInfo"  table="USER_INFO_LIST">
+      <id name="userId" type="int">
+         <generator class="increment"/>
+      </id>
+      <property name="username" type="string" length="15"/>
+      <property name="addrs"  type="string" length="15"/>
+      <list name="phones"  cascade="all-delete-orphan"   lazy="true">
+          <key column="user_id"/>  <!-- fk column -->
+          <list-index base="1" column="PHONE_INDX"  />
+          <one-to-many class="com.nt.entity.PhoneNumber"/>
+      </list>
+   </class>
+ </hibernate-mapping>
