@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class name="PhoneNumber"  table="PHONENUMBER_MAP">
+        <id name="regNo" type="int">
+                <generator class="sequence"/>
+        </id>
+        <property name="phone" type="long"/>
+        <property name="type" type="string"  length="10"/>
+        <property name="provider"  type="string" length="15"/>
+        <property name="unid"  column="user_id" type="int" insert="false" update="false"/>
+   </class>
+ </hibernate-mapping>
