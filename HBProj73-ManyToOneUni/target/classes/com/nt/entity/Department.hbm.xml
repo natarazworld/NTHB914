@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class name="Department"  table="DEPARTMENT">
+      <id name="dno" type="int">
+         <generator class="sequence">
+             <param name="sequence">dno_seq</param>
+         </generator>
+      </id>
+      <property name="dname" type="string" length="15"/>
+      <property name="location"  type="string" length="15"/>
+      <property name="capacity" type="int" />
+   </class>
+ </hibernate-mapping>
