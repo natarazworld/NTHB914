@@ -16,4 +16,9 @@ public class Department implements Serializable {
     private  String location;
     @NonNull
     private  Integer capacity;
+    
+    public Department() {
+		System.out.println("Department:: 0-param constructor"+this.getClass());
+	}
+    
 }

@@ -1,8 +1,12 @@
 package com.nt.dao;
 
+import java.awt.HeadlessException;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.nt.entity.Department;
 import com.nt.entity.EmpDetails;
@@ -49,5 +53,131 @@ public class ManyToOneDAOImpl implements ManyToOneDAO {
 			//close sessionfactory
 			HibernateUtil.closeSessionFactory();
 		}//finally
-	}//main
+	}//method
+	
+	@Override
+	public void loadDataUsingChild() {
+		//get Session
+		Session ses=HibernateUtil.getSession();
+		Transaction tx=null;
+		try {
+			if(!ses.getTransaction().isActive())
+				tx=ses.beginTransaction();
+			//Load objects
+			Query query=ses.createQuery("from EmpDetails");
+			List<EmpDetails> list=query.getResultList();
+			list.forEach(emp->{
+				
+				  System.out.println("Child::"+emp.getEno()+"  "+emp.getEname()+"  "+emp.getEadd()+"  "+emp.getSalary());
+				  //get Associated parent object
+				  Department dept=emp.getDept();
+				  System.out.println("Parent::"+dept.getDno()+"  "+dept.getDname()+"  "+dept.getLocation()+"  "+dept.getCapacity());
+			});
+				
+		}//try
+		catch(HibernateException he) {
+			he.printStackTrace();
+		}
+		finally {
+			//close HB objs
+			HibernateUtil.closeSessionFactory();
+		}
+	}//method
+	
+	@Override
+	public void deleteAllChildsAndItsParent() {
+		//get Session
+				Session ses=HibernateUtil.getSession();
+				Transaction tx=null;
+				boolean flag=false;
+				try {
+					if(!ses.getTransaction().isActive())
+						tx=ses.beginTransaction();
+					//Load all child object
+					Query query=ses.createQuery("from EmpDetails");
+					List<EmpDetails>  list=query.getResultList();
+					list.forEach(emp->{
+						ses.delete(emp);
+					});
+					flag=true;
+					
+				}//try
+				catch(HibernateException he) {
+					he.printStackTrace();
+					flag=false;
+				}
+				finally {
+					//perform TxMgmt
+					 if(flag) {
+						 tx.commit();
+						 System.out.println("All chids and its parents are deleted ");
+					 }
+					 else {
+						 tx.rollback();
+						 System.out.println("All chids and its parents are not deleted ");
+					 }
+					//close HB objs
+					HibernateUtil.closeSessionFactory();
+				}
+	}//method
+	
+	/*@Override
+	public void deleteOneChildFromParent() {   ///Bad code..
+		//get Session
+		Session ses=HibernateUtil.getSession();
+		Transaction tx=null;
+		boolean flag=false;
+		try {
+			if(!ses.getTransaction().isActive())
+				tx=ses.beginTransaction();
+			//Load child obj
+			EmpDetails emp=ses.get(EmpDetails.class, 3);
+			ses.delete(emp);
+			flag=true;
+		}
+		finally {
+			//perform TxMgmt
+			 if(flag) {
+				 tx.commit();
+				 System.out.println("One chid of a parent is deleted ");
+			 }
+			 else {
+				 tx.rollback();
+				 System.out.println("One chid of a parent is not deleted ");
+			 }
+			//close HB objs
+			HibernateUtil.closeSessionFactory();
+		}//finally
+	}//method
+	*/	
+	
+	@Override
+	public void deleteOneChildFromParent() {
+		//get Session
+		Session ses=HibernateUtil.getSession();
+		Transaction tx=null;
+		boolean flag=false;
+		try {
+			if(!ses.getTransaction().isActive())
+				tx=ses.beginTransaction();
+			Query query=ses.createQuery("DELETE FROM EmpDetails WHERE eno=:no");
+			query.setParameter("no",2);
+		     int count=query.executeUpdate();
+		     flag=true;
+		}
+		finally {
+			//perform TxMgmt
+			 if(flag) {
+				 tx.commit();
+				 System.out.println("One chid of a parent is deleted ");
+			 }
+			 else {
+				 tx.rollback();
+				 System.out.println("One chid of a parent is not deleted ");
+			 }
+			//close HB objs
+			HibernateUtil.closeSessionFactory();
+		}//finally
+	}
+	
 }//class

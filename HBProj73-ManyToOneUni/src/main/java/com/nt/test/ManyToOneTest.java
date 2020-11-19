@@ -9,6 +9,9 @@ public class ManyToOneTest {
 	   //get DAO
 		ManyToOneDAO dao=new ManyToOneDAOImpl();
 		//invoke b.methods
-		dao.saveDataUsingChild();
+		//dao.saveDataUsingChild();
+		//dao.loadDataUsingChild();
+		//dao.deleteAllChildsAndItsParent();
+		dao.deleteOneChildFromParent();
 	}//main
 }//class

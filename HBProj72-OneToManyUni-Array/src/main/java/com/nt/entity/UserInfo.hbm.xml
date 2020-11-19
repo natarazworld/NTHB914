@@ -14,6 +14,7 @@
          <!--  <index column="ARRAY_INDX"  type="int" length="10"/> -->
           <list-index  column="ARRAY_INDX" base="1"/>
           <one-to-many class="com.nt.entity.PhoneNumber"/>
+          
       </array>
    </class>
  </hibernate-mapping>

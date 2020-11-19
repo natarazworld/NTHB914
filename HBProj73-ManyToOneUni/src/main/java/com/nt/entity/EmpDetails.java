@@ -17,5 +17,9 @@ public class EmpDetails implements Serializable {
 	@NonNull
 	private Float salary;
 	private Department dept;
+	
+	public EmpDetails() {
+		System.out.println("EmpDetails:: 0-param consturctor"+this.getClass());
+	}
 
 }
