@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+    <class name="com.nt.entity.Doctor"  table="DOCTOR">
+         <id name="did" type="int">
+               <generator class="increment"/>
+         </id>
+         <property name="name" type="string" length="20"/>
+         <property name="hospital" type="string" length="20"/>
+         <property name="qualification" type="string" length="20"/>
+         <set name="patients"  table="DOCTORS_PATIENTS"  cascade="all" lazy="extra"  inverse="true">
+             <key column="doctor_id"/>
+             <many-to-many  class="com.nt.entity.Patient"  column="patient_id" />
+         </set>
+    </class>
+</hibernate-mapping>
