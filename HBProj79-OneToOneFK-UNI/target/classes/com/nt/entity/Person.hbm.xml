@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+   <class  name="com.nt.entity.Person"  table="PERSON_OTOFK">
+      <id name="pid" type="int">
+          <generator class="increment"/>
+       </id>          
+          <property name="pname" type="string" length="20"/>
+          <property name="addrs" type="string" length="20"/>
+   </class>
+</hibernate-mapping>
