@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.nt.entity">
+    <class name="com.nt.entity.LibraryMembership"  table="LIBRARYMEMBERSHIP_OTOPK">
+         <id name="lid" type="int">
+               <generator class="foreign">
+                   <param name="property">studentDetails</param>  
+                   <!-- uses studentDetails property to get associated Student obj(parent)
+                   and to use that Student object id value as current obj (LibraryMemership) id value. -->
+               </generator>
+         </id>
+         <property name="type" type="string" length="20"/>
+         <property name="startDate"/>
+         <property name="endDate"/>
+         <one-to-one name="studentDetails"  class="com.nt.entity.Student"  cascade="all"  lazy="proxy"/>
+    </class>
+</hibernate-mapping>
